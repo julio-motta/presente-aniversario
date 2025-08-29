@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário Juliana ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="intro" id="intro">
+        <h1 id="typing"></h1>
+        <button onclick="startSite()">Abrir meu presente 🎁</button>
+    </div>
+
+    <div class="main-content hidden" id="main-content">
+        <!-- Contador -->
+        <section id="contador">
+            <h2>Nosso Amor 💖</h2>
+            <p>Estamos juntos há <span id="daysTogether"></span> dias.</p>
+        </section>
+
+        <!-- Galeria -->
+        <section id="galeria">
+            <h2>Nossas Memórias 📸</h2>
+            <div class="slideshow-container">
+                <div class="slide fade"><img src="img/foto1.jpg" alt="Foto 1"></div>
+                <div class="slide fade"><img src="img/foto2.jpg" alt="Foto 2"></div>
+                <div class="slide fade"><img src="img/foto3.jpg" alt="Foto 3"></div>
+            </div>
+        </section>
+
+        <!-- Carta -->
+        <section id="carta">
+            <h2>Uma Carta para Você 💌</h2>
+            <div class="envelope" onclick="openLetter()">
+                <div class="flap"></div>
+                <div class="letter hidden" id="letter">
+                    <p>Meu amor,<br><br>
+                    Hoje celebramos não apenas o dia do seu nascimento, mas o presente que é ter você na minha vida.<br><br>
+                    Desde que nos encontramos, cada momento ao seu lado se transformou em uma lembrança que guardo com carinho no coração.<br><br>
+                    Quero que saiba que cada riso, cada abraço, cada olhar seu, é um pedaço do meu mundo que se completa.<br><br>
+                    E hoje, neste aniversário, eu só desejo que seus sonhos floresçam, que seu coração transborde de alegria e que a nossa história continue a ser escrita com amor infinito.<br><br>
+                    Feliz aniversário, Juliana.<br>
+                    Eu te amo ontem, hoje e para sempre.<br>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estrelas -->
+        <section id="estrelas">
+            <h2>Um Céu só para você ✨</h2>
+            <div class="sky">
+                <span onclick="alert('Você é meu sonho realizado ❤️')">*</span>
+                <span onclick="alert('Te amo até as estrelas ✨')">*</span>
+                <span onclick="alert('Você ilumina minha vida 🌟')">*</span>
+                <span onclick="alert('Para sempre ao seu lado 💕')">*</span>
+            </div>
+        </section>
+
+        <!-- Quiz Atualizado -->
+        <section id="quiz">
+            <h2>Quiz do Amor 💕</h2>
+
+            <!-- Pergunta 1 -->
+            <p>Qual foi o nosso primeiro filme juntos?</p>
+            <button onclick="quizAnswer(true)">lilo e stitch</button>
+            <button onclick="quizAnswer(false)">Titanic</button>
+            <button onclick="quizAnswer(false)">Velozes e Furiosos</button>
+
+            <!-- Pergunta 2 -->
+            <p>Aonde foi nosso primeiro beijo?</p>
+            <button onclick="quizAnswer(false)">na sua casa</button>
+            <button onclick="quizAnswer(true)">na praça</button>
+            <button onclick="quizAnswer(false)">em um  restaurant</button>
+
+            <!-- Pergunta 3 -->
+            <p>Em que mês começamos a namorar?</p>
+            <button onclick="quizAnswer(true)">Maio</button>
+            <button onclick="quizAnswer(false)">Junho</button>
+            <button onclick="quizAnswer(false)">Abril</button>
+
+            <!-- Pergunta 4 -->
+            <p>Qual música marcou nosso relacionamento?</p>
+            <button onclick="quizAnswer(true)">A Thousand Years</button>
+            <button onclick="quizAnswer(false)">Perfect</button>
+            <button onclick="quizAnswer(false)">Shape of You</button>
+
+            <!-- Pergunta 5 -->
+            <p>Qual é o apelido carinhoso que uso com voce?</p>
+            <button onclick="quizAnswer(true)">Amor</button>
+            <button onclick="quizAnswer(false)">Princesa</button>
+            <button onclick="quizAnswer(false)">morceguinha</button>
+
+            <p id="quizResult"></p>
+        </section>
+
+        <!-- Spotify -->
+        <section id="musica">
+            <h2>Nossa Música 🎶</h2>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXxBl?utm_source=generator" 
+                width="100%" height="152" frameBorder="0" allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            </iframe>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
