@@ -1,110 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Aniversário Juliana ❤️</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Aniversário Juliana ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="intro" id="intro">
-        <h1 id="typing"></h1>
-        <button onclick="startSite()">Abrir meu presente 🎁</button>
-    </div>
+  <div class="intro" id="intro">
+    <h1 id="typing" class="typing"></h1>
+    <button class="btn" onclick="startSite()">Abrir meu presente 🎁</button>
+    <div id="heartsContainer"></div>
+  </div>
 
-    <div class="main-content hidden" id="main-content">
-        <!-- Contador -->
-        <section id="contador">
-            <h2>Nosso Amor 💖</h2>
-            <p>Estamos juntos há <span id="daysTogether"></span> dias.</p>
-        </section>
+  <div class="main-content hidden" id="main-content">
+    <header class="topbar">
+      <h1 class="brand">Para Juliana 💝</h1>
+      <div class="actions">
+        <button class="btn secondary" id="musicToggle" onclick="toggleMusic()">🔈 Música</button>
+        <button class="btn share" onclick="sharePage()">Compartilhar</button>
+      </div>
+    </header>
 
-        <!-- Galeria -->
-        <section id="galeria">
-            <h2>Nossas Memórias 📸</h2>
-            <div class="slideshow-container">
-                <div class="slide fade"><img src="img/foto1.jpg" alt="Foto 1"></div>
-                <div class="slide fade"><img src="img/foto2.jpg" alt="Foto 2"></div>
-                <div class="slide fade"><img src="img/foto3.jpg" alt="Foto 3"></div>
-            </div>
-        </section>
+    <!-- Contador -->
+    <section id="contador" class="card">
+      <h2>Nosso Amor 💖</h2>
+      <p>Estamos juntos há <span id="daysTogether"></span> dias.</p>
+    </section>
 
-        <!-- Carta -->
-        <section id="carta">
-            <h2>Uma Carta para Você 💌</h2>
-            <div class="envelope" onclick="openLetter()">
-                <div class="flap"></div>
-                <div class="letter hidden" id="letter">
-                    <p>Meu amor,<br><br>
-                    Hoje celebramos não apenas o dia do seu nascimento, mas o presente que é ter você na minha vida.<br><br>
-                    Desde que nos encontramos, cada momento ao seu lado se transformou em uma lembrança que guardo com carinho no coração.<br><br>
-                    Quero que saiba que cada riso, cada abraço, cada olhar seu, é um pedaço do meu mundo que se completa.<br><br>
-                    E hoje, neste aniversário, eu só desejo que seus sonhos floresçam, que seu coração transborde de alegria e que a nossa história continue a ser escrita com amor infinito.<br><br>
-                    Feliz aniversário, Juliana.<br>
-                    Eu te amo ontem, hoje e para sempre.<br>
-                    </p>
-                </div>
-            </div>
-        </section>
+    <!-- Galeria -->
+    <section id="galeria" class="card">
+      <h2>Nossas Memórias 📸</h2>
+      <div class="slideshow-container" id="slideshow">
+        <button class="nav prev" onclick="plusSlides(-1)">‹</button>
+        <div class="slides">
+          <div class="slide fade"><img src="img/foto1.jpg" alt="Foto 1"></div>
+          <div class="slide fade"><img src="img/foto2.jpg" alt="Foto 2"></div>
+          <div class="slide fade"><img src="img/foto3.jpg" alt="Foto 3"></div>
+          <div class="slide fade"><img src="img/foto4.jpg" alt="Foto 4"></div>
+          <div class="slide fade"><img src="img/foto5.jpg" alt="Foto 5"></div>
+          <div class="slide fade"><img src="img/foto6.jpg" alt="Foto 6"></div>
+        </div>
+        <button class="nav next" onclick="plusSlides(1)">›</button>
+      </div>
+    </section>
 
-        <!-- Estrelas -->
-        <section id="estrelas">
-            <h2>Um Céu só para você ✨</h2>
-            <div class="sky">
-                <span onclick="alert('Você é meu sonho realizado ❤️')">*</span>
-                <span onclick="alert('Te amo até as estrelas ✨')">*</span>
-                <span onclick="alert('Você ilumina minha vida 🌟')">*</span>
-                <span onclick="alert('Para sempre ao seu lado 💕')">*</span>
-            </div>
-        </section>
+    <!-- Carta -->
+    <section id="carta" class="card">
+      <h2>Uma Carta para Você 💌</h2>
+      <div class="envelope" onclick="toggleLetter()">
+        <div class="flap"></div>
+        <div class="letter hidden" id="letter">
+          <p>Meu amor,<br><br>
+          Hoje celebramos não apenas o dia do seu nascimento, mas o presente que é ter você na minha vida.<br><br>
+          Desde que nos encontramos, cada momento ao seu lado se transformou em uma lembrança que guardo com carinho no coração.<br><br>
+          Quero que saiba que cada riso, cada abraço, cada olhar seu, é um pedaço do meu mundo que se completa.<br><br>
+          E hoje, neste aniversário, eu só desejo que seus sonhos floresçam, que seu coração transborde de alegria e que a nossa história continue a ser escrita com amor infinito.<br><br>
+          Feliz aniversário, Juliana.<br>
+          Eu te amo ontem, hoje e para sempre.<br>
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Quiz Atualizado -->
-        <section id="quiz">
-            <h2>Quiz do Amor 💕</h2>
+    <!-- Estrelas -->
+    <section id="estrelas" class="card">
+      <h2>Um Céu só para você ✨</h2>
+      <div class="sky" id="sky"></div>
+    </section>
 
-            <!-- Pergunta 1 -->
-            <p>Qual foi o nosso primeiro filme juntos?</p>
-            <button onclick="quizAnswer(true)">lilo e stitch</button>
-            <button onclick="quizAnswer(false)">Titanic</button>
-            <button onclick="quizAnswer(false)">Velozes e Furiosos</button>
+    <!-- Linha do Tempo -->
+    <section id="timeline" class="card">
+      <h2>Nossa Linha do Tempo ⏳</h2>
+      <div class="timeline">
+        <div class="t-card"><h3>Primeiro encontro</h3><p>Um dia que mudou tudo.</p></div>
+        <div class="t-card"><h3>Primeiro beijo</h3><p>Frio na barriga e sorrisos.</p></div>
+        <div class="t-card"><h3>Pedido de namoro</h3><p>Sim para nós dois!</p></div>
+        <div class="t-card"><h3>Aventura juntos</h3><p>Nossas risadas e fotos.</p></div>
+      </div>
+    </section>
 
-            <!-- Pergunta 2 -->
-            <p>Aonde foi nosso primeiro beijo?</p>
-            <button onclick="quizAnswer(false)">na sua casa</button>
-            <button onclick="quizAnswer(true)">na praça</button>
-            <button onclick="quizAnswer(false)">em um  restaurant</button>
+    <!-- Quiz -->
+    <section id="quiz" class="card">
+      <h2>Quiz do Amor 💕</h2>
+      <div id="quizContainer"></div>
+      <p id="quizResult" class="result"></p>
+      <div id="surpresa" class="surpresa hidden">
+        <img src="img/surpresa.jpg" alt="Surpresa">
+        <button class="btn" onclick="startConfetti()">Explodir Confetes 🎉</button>
+      </div>
+    </section>
 
-            <!-- Pergunta 3 -->
-            <p>Em que mês começamos a namorar?</p>
-            <button onclick="quizAnswer(true)">Maio</button>
-            <button onclick="quizAnswer(false)">Junho</button>
-            <button onclick="quizAnswer(false)">Abril</button>
+    <!-- Música -->
+    <section id="musica" class="card">
+      <h2>Nossa Música 🎶</h2>  
+      <audio id="bgm" src="assets/bg.wav" loop></audio>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXxBl?utm_source=generator"
+        width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </section>
 
-            <!-- Pergunta 4 -->
-            <p>Qual música marcou nosso relacionamento?</p>
-            <button onclick="quizAnswer(true)">A Thousand Years</button>
-            <button onclick="quizAnswer(false)">Perfect</button>
-            <button onclick="quizAnswer(false)">Shape of You</button>
+    <footer class="footer">
+      <button class="btn success" onclick="finalMessage()">Abrir Surpresa Final 💘</button>
+      <canvas id="confettiCanvas"></canvas>
+    </footer>
+  </div>
 
-            <!-- Pergunta 5 -->
-            <p>Qual é o apelido carinhoso que uso com voce?</p>
-            <button onclick="quizAnswer(true)">Amor</button>
-            <button onclick="quizAnswer(false)">Princesa</button>
-            <button onclick="quizAnswer(false)">morceguinha</button>
-
-            <p id="quizResult"></p>
-        </section>
-
-        <!-- Spotify -->
-        <section id="musica">
-            <h2>Nossa Música 🎶</h2>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXxBl?utm_source=generator" 
-                width="100%" height="152" frameBorder="0" allowfullscreen="" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-            </iframe>
-        </section>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
